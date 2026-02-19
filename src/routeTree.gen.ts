@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ParmesanRouteImport } from './routes/parmesan'
+import { Route as MozzarellaRouteImport } from './routes/mozzarella'
+import { Route as GoudaRouteImport } from './routes/gouda'
+import { Route as CheddarRouteImport } from './routes/cheddar'
+import { Route as BrieRouteImport } from './routes/brie'
+import { Route as BlueCheeseRouteImport } from './routes/blue-cheese'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ParmesanRoute = ParmesanRouteImport.update({
+  id: '/parmesan',
+  path: '/parmesan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MozzarellaRoute = MozzarellaRouteImport.update({
+  id: '/mozzarella',
+  path: '/mozzarella',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoudaRoute = GoudaRouteImport.update({
+  id: '/gouda',
+  path: '/gouda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheddarRoute = CheddarRouteImport.update({
+  id: '/cheddar',
+  path: '/cheddar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrieRoute = BrieRouteImport.update({
+  id: '/brie',
+  path: '/brie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlueCheeseRoute = BlueCheeseRouteImport.update({
+  id: '/blue-cheese',
+  path: '/blue-cheese',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blue-cheese': typeof BlueCheeseRoute
+  '/brie': typeof BrieRoute
+  '/cheddar': typeof CheddarRoute
+  '/gouda': typeof GoudaRoute
+  '/mozzarella': typeof MozzarellaRoute
+  '/parmesan': typeof ParmesanRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blue-cheese': typeof BlueCheeseRoute
+  '/brie': typeof BrieRoute
+  '/cheddar': typeof CheddarRoute
+  '/gouda': typeof GoudaRoute
+  '/mozzarella': typeof MozzarellaRoute
+  '/parmesan': typeof ParmesanRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blue-cheese': typeof BlueCheeseRoute
+  '/brie': typeof BrieRoute
+  '/cheddar': typeof CheddarRoute
+  '/gouda': typeof GoudaRoute
+  '/mozzarella': typeof MozzarellaRoute
+  '/parmesan': typeof ParmesanRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/blue-cheese'
+    | '/brie'
+    | '/cheddar'
+    | '/gouda'
+    | '/mozzarella'
+    | '/parmesan'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/blue-cheese'
+    | '/brie'
+    | '/cheddar'
+    | '/gouda'
+    | '/mozzarella'
+    | '/parmesan'
+  id:
+    | '__root__'
+    | '/'
+    | '/blue-cheese'
+    | '/brie'
+    | '/cheddar'
+    | '/gouda'
+    | '/mozzarella'
+    | '/parmesan'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlueCheeseRoute: typeof BlueCheeseRoute
+  BrieRoute: typeof BrieRoute
+  CheddarRoute: typeof CheddarRoute
+  GoudaRoute: typeof GoudaRoute
+  MozzarellaRoute: typeof MozzarellaRoute
+  ParmesanRoute: typeof ParmesanRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/parmesan': {
+      id: '/parmesan'
+      path: '/parmesan'
+      fullPath: '/parmesan'
+      preLoaderRoute: typeof ParmesanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mozzarella': {
+      id: '/mozzarella'
+      path: '/mozzarella'
+      fullPath: '/mozzarella'
+      preLoaderRoute: typeof MozzarellaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gouda': {
+      id: '/gouda'
+      path: '/gouda'
+      fullPath: '/gouda'
+      preLoaderRoute: typeof GoudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cheddar': {
+      id: '/cheddar'
+      path: '/cheddar'
+      fullPath: '/cheddar'
+      preLoaderRoute: typeof CheddarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brie': {
+      id: '/brie'
+      path: '/brie'
+      fullPath: '/brie'
+      preLoaderRoute: typeof BrieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blue-cheese': {
+      id: '/blue-cheese'
+      path: '/blue-cheese'
+      fullPath: '/blue-cheese'
+      preLoaderRoute: typeof BlueCheeseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlueCheeseRoute: BlueCheeseRoute,
+  BrieRoute: BrieRoute,
+  CheddarRoute: CheddarRoute,
+  GoudaRoute: GoudaRoute,
+  MozzarellaRoute: MozzarellaRoute,
+  ParmesanRoute: ParmesanRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,115 +1,123 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import {
-  Zap,
-  Server,
-  Route as RouteIcon,
-  Shield,
-  Waves,
+  Heart,
   Sparkles,
+  Star,
+  Wine,
+  Pizza,
+  Crown,
 } from 'lucide-react'
 
 export const Route = createFileRoute('/')({ component: App })
 
 function App() {
-  const features = [
+  const cheeses = [
     {
-      icon: <Zap className="w-12 h-12 text-cyan-400" />,
-      title: 'Powerful Server Functions',
+      icon: <Crown className="w-12 h-12 text-amber-400" />,
+      title: 'Aged Cheddar',
       description:
-        'Write server-side code that seamlessly integrates with your client components. Type-safe, secure, and simple.',
+        'A classic sharp cheddar aged to perfection. Rich, tangy, and crumbly with a deep golden color. Perfect for any occasion.',
+      link: '/cheddar',
     },
     {
-      icon: <Server className="w-12 h-12 text-cyan-400" />,
-      title: 'Flexible Server Side Rendering',
+      icon: <Heart className="w-12 h-12 text-red-400" />,
+      title: 'Brie',
       description:
-        'Full-document SSR, streaming, and progressive enhancement out of the box. Control exactly what renders where.',
+        'Soft, creamy, and luxurious French cheese with a bloomy white rind. Mild and buttery with earthy mushroom notes.',
+      link: '/brie',
     },
     {
-      icon: <RouteIcon className="w-12 h-12 text-cyan-400" />,
-      title: 'API Routes',
+      icon: <Star className="w-12 h-12 text-blue-400" />,
+      title: 'Blue Cheese',
       description:
-        'Build type-safe API endpoints alongside your application. No separate backend needed.',
+        'Bold and tangy with distinctive blue-green veins. Sharp, salty flavor that pairs wonderfully with sweet accompaniments.',
+      link: '/blue-cheese',
     },
     {
-      icon: <Shield className="w-12 h-12 text-cyan-400" />,
-      title: 'Strongly Typed Everything',
+      icon: <Wine className="w-12 h-12 text-purple-400" />,
+      title: 'Gouda',
       description:
-        'End-to-end type safety from server to client. Catch errors before they reach production.',
+        'Dutch delight with a sweet, slightly nutty flavor. Smooth texture that becomes more complex with age.',
+      link: '/gouda',
     },
     {
-      icon: <Waves className="w-12 h-12 text-cyan-400" />,
-      title: 'Full Streaming Support',
+      icon: <Pizza className="w-12 h-12 text-yellow-400" />,
+      title: 'Mozzarella',
       description:
-        'Stream data from server to client progressively. Perfect for AI applications and real-time updates.',
+        'Fresh Italian cheese known for its stretchy, melty properties. Mild and milky - the ultimate pizza topping.',
+      link: '/mozzarella',
     },
     {
-      icon: <Sparkles className="w-12 h-12 text-cyan-400" />,
-      title: 'Next Generation Ready',
+      icon: <Sparkles className="w-12 h-12 text-orange-400" />,
+      title: 'Parmesan',
       description:
-        'Built from the ground up for modern web applications. Deploy anywhere JavaScript runs.',
+        'Hard, granular Italian cheese with a rich, savory umami flavor. Ages for years, intensifying its nutty taste.',
+      link: '/parmesan',
     },
   ]
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-amber-900 via-yellow-800 to-amber-900">
       <section className="relative py-20 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 via-amber-500/10 to-orange-500/10"></div>
         <div className="relative max-w-5xl mx-auto">
           <div className="flex items-center justify-center gap-6 mb-6">
-            <img
-              src="/tanstack-circle-logo.png"
-              alt="TanStack Logo"
-              className="w-24 h-24 md:w-32 md:h-32"
-            />
+            <div className="text-8xl">🧀</div>
             <h1 className="text-6xl md:text-7xl font-black text-white tracking-[-0.08em]">
-              <span className="text-gray-300">TANSTACK</span>{' '}
-              <span className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                START
+              <span className="text-yellow-100">THE WONDERFUL</span>{' '}
+              <span className="bg-gradient-to-r from-amber-300 to-yellow-300 bg-clip-text text-transparent">
+                WORLD OF CHEESE
               </span>
             </h1>
           </div>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
-            The framework for next generation AI applications
+          <p className="text-2xl md:text-3xl text-yellow-100 mb-4 font-light">
+            A delicious journey through the art of cheese making
           </p>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-            Full-stack framework powered by TanStack Router for React and Solid.
-            Build modern applications with server functions, streaming, and type
-            safety.
+          <p className="text-lg text-yellow-200 max-w-3xl mx-auto mb-8">
+            From ancient traditions to modern innovations, cheese has delighted taste buds
+            for thousands of years. Explore the rich variety of flavors, textures, and cultures
+            that make cheese one of humanity's greatest culinary achievements.
           </p>
           <div className="flex flex-col items-center gap-4">
             <a
-              href="https://tanstack.com/start"
+              href="https://en.wikipedia.org/wiki/Cheese"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-cyan-500/50"
+              className="px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-amber-500/50"
             >
-              Documentation
+              Learn More About Cheese
             </a>
-            <p className="text-gray-400 text-sm mt-2">
-              Begin your TanStack Start journey by editing{' '}
-              <code className="px-2 py-1 bg-slate-700 rounded text-cyan-400">
-                /src/routes/index.tsx
-              </code>
+            <p className="text-yellow-200 text-sm mt-2">
+              🧀 Did you know? There are over 1,800 varieties of cheese in the world!
             </p>
           </div>
         </div>
       </section>
 
       <section className="py-16 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center text-yellow-100 mb-12">
+          Popular Cheese Varieties
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div
+          {cheeses.map((cheese, index) => (
+            <Link
               key={index}
-              className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
+              to={cheese.link}
+              className="bg-amber-800/50 backdrop-blur-sm border border-amber-700 rounded-xl p-6 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10 cursor-pointer group"
             >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {feature.title}
+              <div className="mb-4 inline-flex group-hover:scale-110 transition-transform">
+                {cheese.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-yellow-300 transition-colors">
+                {cheese.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {feature.description}
+              <p className="text-yellow-200 leading-relaxed">
+                {cheese.description}
               </p>
-            </div>
+              <p className="text-amber-400 text-sm mt-4 font-medium">
+                Learn more →
+              </p>
+            </Link>
           ))}
         </div>
       </section>
