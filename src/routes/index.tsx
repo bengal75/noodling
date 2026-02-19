@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import {
   Heart,
   Sparkles,
@@ -17,36 +17,42 @@ function App() {
       title: 'Aged Cheddar',
       description:
         'A classic sharp cheddar aged to perfection. Rich, tangy, and crumbly with a deep golden color. Perfect for any occasion.',
+      link: '/cheddar',
     },
     {
       icon: <Heart className="w-12 h-12 text-red-400" />,
       title: 'Brie',
       description:
         'Soft, creamy, and luxurious French cheese with a bloomy white rind. Mild and buttery with earthy mushroom notes.',
+      link: '/brie',
     },
     {
       icon: <Star className="w-12 h-12 text-blue-400" />,
       title: 'Blue Cheese',
       description:
         'Bold and tangy with distinctive blue-green veins. Sharp, salty flavor that pairs wonderfully with sweet accompaniments.',
+      link: '/blue-cheese',
     },
     {
       icon: <Wine className="w-12 h-12 text-purple-400" />,
       title: 'Gouda',
       description:
         'Dutch delight with a sweet, slightly nutty flavor. Smooth texture that becomes more complex with age.',
+      link: '/gouda',
     },
     {
       icon: <Pizza className="w-12 h-12 text-yellow-400" />,
       title: 'Mozzarella',
       description:
         'Fresh Italian cheese known for its stretchy, melty properties. Mild and milky - the ultimate pizza topping.',
+      link: '/mozzarella',
     },
     {
       icon: <Sparkles className="w-12 h-12 text-orange-400" />,
       title: 'Parmesan',
       description:
         'Hard, granular Italian cheese with a rich, savory umami flavor. Ages for years, intensifying its nutty taste.',
+      link: '/parmesan',
     },
   ]
 
@@ -94,18 +100,24 @@ function App() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cheeses.map((cheese, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-amber-800/50 backdrop-blur-sm border border-amber-700 rounded-xl p-6 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10"
+              to={cheese.link}
+              className="bg-amber-800/50 backdrop-blur-sm border border-amber-700 rounded-xl p-6 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10 cursor-pointer group"
             >
-              <div className="mb-4">{cheese.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <div className="mb-4 group-hover:scale-110 transition-transform">
+                {cheese.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-yellow-300 transition-colors">
                 {cheese.title}
               </h3>
               <p className="text-yellow-200 leading-relaxed">
                 {cheese.description}
               </p>
-            </div>
+              <p className="text-amber-400 text-sm mt-4 font-medium">
+                Learn more →
+              </p>
+            </Link>
           ))}
         </div>
       </section>

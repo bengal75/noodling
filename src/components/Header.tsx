@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 
 import { useState } from 'react'
-import { Home, Menu, X } from 'lucide-react'
+import { Home, Menu, X, Crown, Heart, Star, Wine, Pizza, Sparkles } from 'lucide-react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -57,6 +57,90 @@ export default function Header() {
           >
             <Home size={20} />
             <span className="font-medium">Home</span>
+          </Link>
+
+          <div className="mt-6 mb-3 px-3">
+            <h3 className="text-xs font-semibold text-amber-400 uppercase tracking-wider">
+              Cheese Varieties
+            </h3>
+          </div>
+
+          <Link
+            to="/cheddar"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-900 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-amber-600 hover:bg-amber-700 transition-colors mb-2',
+            }}
+          >
+            <Crown size={20} className="text-amber-400" />
+            <span className="font-medium">Aged Cheddar</span>
+          </Link>
+
+          <Link
+            to="/brie"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-900 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-amber-600 hover:bg-amber-700 transition-colors mb-2',
+            }}
+          >
+            <Heart size={20} className="text-red-400" />
+            <span className="font-medium">Brie</span>
+          </Link>
+
+          <Link
+            to="/blue-cheese"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-900 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-amber-600 hover:bg-amber-700 transition-colors mb-2',
+            }}
+          >
+            <Star size={20} className="text-blue-400" />
+            <span className="font-medium">Blue Cheese</span>
+          </Link>
+
+          <Link
+            to="/gouda"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-900 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-amber-600 hover:bg-amber-700 transition-colors mb-2',
+            }}
+          >
+            <Wine size={20} className="text-purple-400" />
+            <span className="font-medium">Gouda</span>
+          </Link>
+
+          <Link
+            to="/mozzarella"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-900 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-amber-600 hover:bg-amber-700 transition-colors mb-2',
+            }}
+          >
+            <Pizza size={20} className="text-yellow-400" />
+            <span className="font-medium">Mozzarella</span>
+          </Link>
+
+          <Link
+            to="/parmesan"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-3 rounded-lg hover:bg-amber-900 transition-colors mb-2"
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-amber-600 hover:bg-amber-700 transition-colors mb-2',
+            }}
+          >
+            <Sparkles size={20} className="text-orange-400" />
+            <span className="font-medium">Parmesan</span>
           </Link>
 
           {/* Demo Links Start */}
