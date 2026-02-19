@@ -105,7 +105,7 @@ function App() {
               to={cheese.link}
               className="bg-amber-800/50 backdrop-blur-sm border border-amber-700 rounded-xl p-6 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/10 cursor-pointer group"
             >
-              <div className="mb-4 group-hover:scale-110 transition-transform">
+              <div className="mb-4 group-hover:scale-110 transition-transform origin-center">
                 {cheese.icon}
               </div>
               <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-yellow-300 transition-colors">
